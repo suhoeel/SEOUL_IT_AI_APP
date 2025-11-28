@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/menu_chat_history"
+        android:title="과거 채팅 이력" />
+
+    <item
+        android:id="@+id/menu_github"
+        android:title="깃 허브 불러오기" />
+
+</menu>

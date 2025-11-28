@@ -1,6 +1,7 @@
 package com.portfolio.school.db;
 
 import androidx.room.Dao;
+import androidx.room.Delete;
 import androidx.room.Insert;
 import androidx.room.Query;
 
@@ -30,6 +31,24 @@ public interface DataResponseDao {
      */
     @Query("SELECT * FROM chat_history ORDER BY timestamp ASC")
     List<DataResponse> getAll();
+
+    @Query("SELECT * FROM chat_history GROUP BY strftime('%Y-%m-%d', timestamp / 1000, 'unixepoch') ORDER BY timestamp ASC")
+    List<DataResponse> getChatsNoDuplicateDate();
+
+    /**
+     * 특정 날짜의 시작과 끝 timestamp 사이에 있는 모든 채팅 기록을 조회합니다.
+     * @param startOfDayTimestamp 해당 날짜의 00:00:00 시점의 timestamp
+     * @param endOfDayTimestamp 해당 날짜의 23:59:59 시점의 timestamp
+     * @return 해당 날짜의 DataResponse 리스트
+     */
+    @Query("SELECT * FROM chat_history WHERE timestamp BETWEEN :startOfDayTimestamp AND :endOfDayTimestamp ORDER BY timestamp ASC")
+    List<DataResponse> getChatsForDate(long startOfDayTimestamp, long endOfDayTimestamp);
+
+//    @Delete
+//    void delete(DataResponse dataResponse);
+
+    @Query("DELETE FROM chat_history WHERE timestamp BETWEEN :startOfDayTimestamp AND :endOfDayTimestamp")
+    void deleteDate(long startOfDayTimestamp, long endOfDayTimestamp);
 
     /**
      * (선택 사항) 데이터베이스의 모든 채팅 기록을 삭제합니다.

@@ -6,6 +6,11 @@ import androidx.room.Entity;
 import androidx.room.Ignore;
 import androidx.room.PrimaryKey;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
 @Entity(tableName = "chat_history")
 public class DataResponse {
 
@@ -107,4 +112,6 @@ public class DataResponse {
     public void setAnimate(boolean animate) {
         isAnimate = animate;
     }
+
+
 }

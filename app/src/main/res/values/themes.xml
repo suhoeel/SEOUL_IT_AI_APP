@@ -2,8 +2,14 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.MyAI" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
-        <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+         <item name="colorPrimary">#8B62E9</item>
+        <!-- ======================================= -->
     </style>
 
     <style name="Theme.MyAI" parent="Base.Theme.MyAI" />
+
+    <style name="Theme.MyAI.ChatHistory" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/primary</item>
+    </style>
+
 </resources>

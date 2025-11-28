@@ -2,6 +2,14 @@
     <!-- Base application theme. -->
     <style name="Base.Theme.MyAI" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your dark theme here. -->
-        <!-- <item name="colorPrimary">@color/my_dark_primary</item> -->
+        <item name="colorPrimary">@color/primary</item>
+        <item name="android:windowExitAnimation">@null</item>
+        <item name="android:windowEnterAnimation">@null</item>
+    </style>
+
+    <style name="Theme.MyAI" parent="Base.Theme.MyAI" />
+
+    <style name="Theme.MyAI.ChatHistory" parent="Theme.Material3.DayNight.NoActionBar">
+        <item name="android:statusBarColor">@color/primary</item>
     </style>
 </resources>

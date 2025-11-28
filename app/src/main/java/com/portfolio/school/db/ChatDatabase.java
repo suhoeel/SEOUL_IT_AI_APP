@@ -8,6 +8,11 @@ import androidx.room.RoomDatabase;
 
 import com.portfolio.school.model.DataResponse;
 
+import java.time.LocalDate;
+import java.time.ZoneId;
+import java.time.format.DateTimeFormatter;
+import java.util.List;
+
 /**
  * Room 데이터베이스의 메인 클래스입니다.
  * 데이터베이스의 엔티티(테이블), 버전, DAO를 정의합니다.
